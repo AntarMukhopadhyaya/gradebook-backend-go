@@ -10,7 +10,7 @@ var DB *gorm.DB
 
 func ConnectToDb() {
 	var err error
-	DB, err = gorm.Open(postgres.Open(os.Getenv("DB_URI")), &gorm.Config{})
+	DB, err = gorm.Open(postgres.Open(os.Getenv("LOCAL_DB_URI")), &gorm.Config{})
 	if err != nil {
 		panic("Failed to connect to DB")
 	}
